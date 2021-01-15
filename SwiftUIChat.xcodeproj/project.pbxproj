@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		F906807025B0CC8E00AEC54D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F906806F25B0CC8E00AEC54D /* Preview Assets.xcassets */; };
 		F906807325B0CC8E00AEC54D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F906807125B0CC8E00AEC54D /* LaunchScreen.storyboard */; };
 		F906807C25B0CD5D00AEC54D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F906807B25B0CD5D00AEC54D /* GoogleService-Info.plist */; };
+		F906809925B1896F00AEC54D /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F906809825B1896F00AEC54D /* ChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F906807225B0CC8E00AEC54D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F906807425B0CC8E00AEC54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F906807B25B0CD5D00AEC54D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F906809825B1896F00AEC54D /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,6 @@
 				22F54CFE0C03F8EB7DB142CD /* Pods-SwiftUIChat.debug.xcconfig */,
 				1A339CE880DEB632E12591F8 /* Pods-SwiftUIChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +87,7 @@
 				F906806625B0CC8200AEC54D /* AppDelegate.swift */,
 				F906806825B0CC8200AEC54D /* SceneDelegate.swift */,
 				F906806A25B0CC8200AEC54D /* ContentView.swift */,
+				F906809825B1896F00AEC54D /* ChatController.swift */,
 				F906806C25B0CC8E00AEC54D /* Assets.xcassets */,
 				F906807125B0CC8E00AEC54D /* LaunchScreen.storyboard */,
 				F906807425B0CC8E00AEC54D /* Info.plist */,
@@ -221,6 +223,7 @@
 				F906806725B0CC8200AEC54D /* AppDelegate.swift in Sources */,
 				F906806925B0CC8200AEC54D /* SceneDelegate.swift in Sources */,
 				F906806B25B0CC8200AEC54D /* ContentView.swift in Sources */,
+				F906809925B1896F00AEC54D /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
