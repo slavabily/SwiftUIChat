@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-// let's create a structure that will represent each message in chat
-struct ChatMessage : Hashable {
-    var message: String
-    var avatar: String
-    var color: Color
-    // isMe will be true if We sent the message
-        var isMe: Bool = false
-}
-
 // ChatRow will be a view similar to a Cell in standard Swift
 struct ChatRow : View {
     

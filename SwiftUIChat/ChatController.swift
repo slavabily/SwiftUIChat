@@ -7,10 +7,16 @@
 
 import Combine
 import SwiftUI
+import Firebase
+import MessageKit
+import FirebaseFirestore
 
 // ChatController needs to be a ObservableObject in order
 // to be accessible by SwiftUI
 class ChatController : ObservableObject {
+    
+    private let db = Firestore.firestore()
+    private var reference: CollectionReference?
     // didChange will let the SwiftUI know that some changes have happened in this object
     // and we need to rebuild all the views related to that object
     var didChange = PassthroughSubject<Void, Never>()
@@ -22,9 +28,20 @@ class ChatController : ObservableObject {
         ChatMessage(message: "Hi", avatar: "B", color: .blue)
     ]
     
+    init() {
+        self.reference = db.collection(["thread"].joined(separator: "/"))
+    }
+    
     // this function will be accessible from SwiftUI main view
     // here you can add the necessary code to send your messages not only to the SwiftUI view, but also to the database so that other users of the app would be able to see it
     func sendMessage(_ chatMessage: ChatMessage) {
+        
+        reference?.addDocument(data: chatMessage.representation, completion: { (error) in
+            if let error = error {
+                print("Error sending message: \(error.localizedDescription)")
+                return
+            }  
+        })
         // here we populate the messages array
         messages.append(chatMessage)
         // here we let the SwiftUI know that we need to rebuild the views
