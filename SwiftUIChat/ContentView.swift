@@ -78,10 +78,26 @@ struct ContentView : View {
             }.frame(minHeight: CGFloat(50)).padding()
             // that's the height of the HStack
         }
+        .onAppear {
+            chatController.reference?.addSnapshotListener({ (querySnapshot, error) in
+                guard let snapshot = querySnapshot else {
+                    print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
+                    return
+                }
+                snapshot.documentChanges.forEach { (change) in
+                    guard let chatMessage = ChatMessage(document: change.document) else {
+                      print("There are no chatMessages observed...")
+                        return
+                    }
+                    chatController.fetchMessage(chatMessage)   
+                }
+            })
+        }
     }
     
     func sendMessage() {
         chatController.sendMessage(ChatMessage(message: composedMessage, avatar: "C", color: .green, isMe: true))
+        
         composedMessage = ""
     }
 }
