@@ -42,10 +42,6 @@ class ChatController : ObservableObject {
                 return
             }  
         })
-        // here we populate the messages array
-        messages.append(chatMessage)
-        // here we let the SwiftUI know that we need to rebuild the views
-        didChange.send(())
     }
     
     func fetchMessage(_ chatMessage: ChatMessage) {
@@ -55,8 +51,6 @@ class ChatController : ObservableObject {
             return
         }
         messages.append(chatMessage)
-        
-        didChange.send()
-    }  
+    }
 }
 
